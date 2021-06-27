@@ -15,7 +15,7 @@ def permute_idices(wires):
             if wires[i] == wires[j]:
                 permutation[i], permutation[j] = permutation[j], permutation[i]
                 break
-        return permutation
+    return permutation
 
 
 def test_plonk():

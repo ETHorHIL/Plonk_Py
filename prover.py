@@ -46,12 +46,12 @@ def accumulator_factor(n, i, witness, beta, id_domain, perm_domain, gamma):
     # i am doing permutation[j-1] below because the list starts at 0 and the
     # paper at 1
     res = Fp(1)
-    for j in range(i):
+    for j in range(i+1):
         nom_1 =   witness[j]         + beta * id_domain[j]     + gamma
-        denom_1 = witness[j]         + beta * id_domain[j]     + gamma
+        denom_1 = witness[j]         + beta * perm_domain[j]     + gamma
 
         nom_2 =   witness[n + j]     + beta * id_domain[n+j]   + gamma
-        denom_2 = witness[n + j]     + beta * id_domain[n+j]   + gamma
+        denom_2 = witness[n + j]     + beta * perm_domain[n+j]   + gamma
 
         nom_3 =   witness[2 * n + j] + beta * id_domain[2*n+j] + gamma
         denom_3 = witness[2 * n + j] + beta * perm_domain[2*n+j] + gamma
